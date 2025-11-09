@@ -7,6 +7,8 @@ This document explains the complete XML documentation system we built, how it wo
 We created an AWS-style documentation portal with:
 - **Landing page** with cards linking to multiple guides
 - **Multi-page guides** with persistent left sidebar navigation
+- **AWS-style navigation** - "Next topic:" and "Previous topic:" links at page bottom
+- **Help panel system** - Slide-in panels from the right for contextual help
 - **DocBook XML** as the source format
 - **Make-based build system** integrated with VS Code tasks
 - **Professional styling** with dark sidebar theme
@@ -484,6 +486,55 @@ Use lowercase with hyphens for all IDs:
 - Use descriptive names: `admin-guide.xml` not `guide2.xml`
 - Match guide ID to filename: `<book id="admin-guide">` → `admin-guide.xml`
 - Keep names short for clean URLs
+
+## Advanced Features
+
+### AWS-Style Navigation
+
+The system includes automatic page-to-page navigation at the bottom of each page:
+
+- **Format**: "Next topic: [Page Title]" and "Previous topic: [Page Title]"
+- **Dynamic**: Automatically shows actual page titles using XSLT
+- **Contextual**: Updates automatically if you reorganize document structure
+- **Implementation**: Custom `footer.navigation` template in [custom-docbook.xsl](../../custom-docbook.xsl)
+
+The navigation is positioned at the bottom of each page with proper spacing from the sidebar.
+
+### Help Panel System
+
+Slide-in contextual help panels from the right side of the page:
+
+**Adding Help Buttons:**
+
+1. Add processing instruction in your XML:
+   ```xml
+   <chapter id="my-chapter">
+     <title>My Chapter</title>
+     <?dbhtml-include href="my-help.html"?>
+     <para>Content...</para>
+   </chapter>
+   ```
+
+2. Add handler in [custom-docbook.xsl](../../custom-docbook.xsl):
+   ```xml
+   <xsl:when test="$href = 'my-help.html'">
+     <xsl:text disable-output-escaping="yes"><![CDATA[
+     <button class="help-button" onclick="openHelpPanel('Help Title', `
+       <h4>Help Content</h4>
+       <p>Your help text here...</p>
+     `)">Help</button>
+     ]]></xsl:text>
+   </xsl:when>
+   ```
+
+**Features:**
+- Slides in from right side
+- Overlay background dims page
+- Close with button, overlay click, or ESC key
+- Supports HTML content (headings, lists, links, etc.)
+- Responsive design
+
+See [HELP-PANEL-EXAMPLE.md](../../HELP-PANEL-EXAMPLE.md) for complete usage guide.
 
 ## Production Deployment
 

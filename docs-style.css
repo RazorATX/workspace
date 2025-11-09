@@ -12,6 +12,7 @@ body {
     color: #1a1a1a;
     background: #ffffff;
     display: flex;
+    flex-wrap: wrap;
     min-height: 100vh;
 }
 
@@ -134,47 +135,41 @@ body {
     text-decoration: underline;
 }
 
-/* Footer navigation */
+/* Footer navigation - AWS style */
 .navfooter {
-    border-top: 1px solid #e1e4e8;
-    padding-top: 20px;
-    margin-top: 60px;
-    margin-left: 0;
-}
-
-.navfooter table {
+    position: relative;
+    border-top: 1px solid #d5dbdb;
+    padding: 20px;
+    padding-left: 300px; /* Account for sidebar width */
+    margin: 0;
     width: 100%;
-    border: none;
+    flex-basis: 100%; /* Force to new line in flex layout */
+    font-size: 14px;
+    color: #545b64;
+    background: #ffffff;
 }
 
-.navfooter td {
-    padding: 12px 0;
+.navfooter p {
+    margin: 8px 0;
+    line-height: 1.6;
+}
+
+.navfooter .nav-next {
+    margin-bottom: 4px;
+}
+
+.navfooter .nav-prev {
+    margin-top: 4px;
 }
 
 .navfooter a {
-    color: #0066cc;
+    color: #0073bb;
     text-decoration: none;
-    font-size: 15px;
-    font-weight: 500;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
 }
 
 .navfooter a:hover {
+    color: #004d7a;
     text-decoration: underline;
-    color: #0550ae;
-}
-
-/* Navigation arrows */
-.navfooter a[rel="prev"]::before {
-    content: "← ";
-    font-weight: bold;
-}
-
-.navfooter a[rel="next"]::after {
-    content: " →";
-    font-weight: bold;
 }
 
 /* Headings */

@@ -29,6 +29,10 @@
   <!-- Chapter 1: Getting Started -->
   <chapter id="getting-started">
     <title>Getting Started</title>
+
+    <!-- Page-level help button -->
+    <?dbhtml-include href="getting-started-help.html"?>
+
     <para>
       This chapter will help you get up and running quickly with our product.
     </para>

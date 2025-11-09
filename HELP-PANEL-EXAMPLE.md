@@ -10,10 +10,12 @@ The documentation system now supports **Help/Info panels** that slide in from th
 - ✅ Close button and ESC key support
 - ✅ Responsive design
 
-### 2. Fixed Navigation
-- ✅ Navigation links now show actual page titles instead of "Prev/Next"
-- ✅ Navigation buttons properly positioned (not hidden by sidebar)
-- ✅ Arrow indicators (← and →)
+### 2. AWS-Style Navigation
+- ✅ Simple text-based navigation (like AWS documentation)
+- ✅ Shows actual page titles dynamically
+- ✅ Format: "Next topic: [Page Title]" and "Previous topic: [Page Title]"
+- ✅ Properly positioned at bottom of each page
+- ✅ Automatically updates if document structure changes
 
 ## How to Add Help Buttons
 
@@ -91,31 +93,32 @@ Create `install-help-button.html`:
 `)">More Info</button>
 ```
 
-## Alternative: Inline JavaScript Method
+## Important: How Help Buttons Work
 
-You can also add help buttons directly in the XML using inline HTML:
+Help buttons must be added using the `<?dbhtml-include href="filename.html"?>` processing instruction method shown above. The content is embedded in the XSL stylesheet and rendered as proper HTML.
 
-```xml
-<section id="configuration">
-  <title>Configuration</title>
+**Note:** You cannot use CDATA sections directly in XML para elements as they will be escaped. Always use external HTML files with the processing instruction method.
 
-  <para>
-    <![CDATA[
-    <button class="help-button" onclick="openHelpPanel('Configuration Help', `
-      <h4>Configuration Options</h4>
-      <p>Available configuration parameters:</p>
-      <ul>
-        <li><code>api_key</code> - Your API key</li>
-        <li><code>timeout</code> - Request timeout in seconds</li>
-        <li><code>retry_count</code> - Number of retries</li>
-      </ul>
-    `)">Help</button>
-    ]]>
-  </para>
+### Adding New Help Buttons
 
-  <para>Configuration content goes here...</para>
-</section>
-```
+To add a help button to a new chapter/section:
+
+1. Add the processing instruction to your XML:
+   ```xml
+   <?dbhtml-include href="my-help-button.html"?>
+   ```
+
+2. Update [custom-docbook.xsl](custom-docbook.xsl) to handle the new file:
+   ```xml
+   <xsl:when test="$href = 'my-help-button.html'">
+     <xsl:text disable-output-escaping="yes"><![CDATA[
+     <button class="help-button" onclick="openHelpPanel('My Help', `
+       <h4>Your help content here</h4>
+       <p>More content...</p>
+     `)">Help</button>
+     ]]></xsl:text>
+   </xsl:when>
+   ```
 
 ## Help Panel Content Structure
 
@@ -258,22 +261,21 @@ Help panel styles are in `docs-style.css`. You can customize:
 
 ## Navigation Improvements
 
-The navigation system has been updated:
+The navigation system has been updated to AWS documentation style:
 
-### Before:
+### Format:
 ```
-[Prev] | [Up] | [Next]
-```
-
-### After:
-```
-← Installation Guide | [Up] | Getting Started →
+Next topic: Installation and Setup
+Previous topic: About This Guide
 ```
 
-- Shows actual page titles
-- Includes arrow indicators
-- Better positioned (not hidden by sidebar)
-- Improved hover states
+### Features:
+- ✅ Simple text-based links (like AWS docs)
+- ✅ Shows actual page titles dynamically
+- ✅ Automatically updates if document structure/order changes
+- ✅ Properly positioned at bottom of each page
+- ✅ Clean, minimalist styling
+- ✅ No tables or complex layouts
 
 ## Testing
 
@@ -294,9 +296,9 @@ To test the help panel feature:
 
 4. **Test navigation**:
    - Scroll to bottom of page
-   - Verify "Previous" shows actual page title
-   - Verify "Next" shows actual page title
-   - Verify navigation is not hidden by sidebar
+   - Verify format: "Next topic: [Page Title]"
+   - Verify format: "Previous topic: [Page Title]"
+   - Verify navigation is positioned below content (not on right side)
 
 ## Example Implementation
 
