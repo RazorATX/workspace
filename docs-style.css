@@ -1,0 +1,402 @@
+/* Modern Documentation Sidebar Style - Similar to AWS Docs */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+    color: #1a1a1a;
+    background: #ffffff;
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar Container */
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 280px;
+    height: 100vh;
+    background: #232f3e;
+    color: #ffffff;
+    overflow-y: auto;
+    padding: 20px 0;
+    z-index: 1000;
+}
+
+.sidebar-header {
+    padding: 0 20px 20px 20px;
+    border-bottom: 1px solid #3f4f5f;
+}
+
+.sidebar-header h1 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 5px;
+}
+
+.sidebar-header .subtitle {
+    font-size: 12px;
+    color: #aab7c4;
+}
+
+/* Sidebar Navigation */
+.sidebar nav {
+    padding: 10px 0;
+}
+
+.sidebar .toc {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar .toc > li {
+    margin: 0;
+}
+
+.sidebar .toc a {
+    display: block;
+    padding: 8px 20px;
+    color: #aab7c4;
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.2s ease;
+    border-left: 3px solid transparent;
+}
+
+.sidebar .toc a:hover {
+    background: #2d3e50;
+    color: #ffffff;
+    border-left-color: #ff9900;
+}
+
+.sidebar .toc a.active {
+    background: #2d3e50;
+    color: #ffffff;
+    border-left-color: #ff9900;
+    font-weight: 600;
+}
+
+/* Nested TOC items */
+.sidebar .toc ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.sidebar .toc ul a {
+    padding-left: 40px;
+    font-size: 13px;
+}
+
+.sidebar .toc ul ul a {
+    padding-left: 60px;
+    font-size: 12px;
+}
+
+/* Main Content Container */
+.main-content {
+    margin-left: 280px;
+    flex: 1;
+    padding: 40px 60px;
+    max-width: 1200px;
+}
+
+/* Navigation breadcrumbs */
+.navheader {
+    border-bottom: 1px solid #e1e4e8;
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navheader table {
+    width: 100%;
+    border: none;
+}
+
+.navheader a {
+    color: #0066cc;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.navheader a:hover {
+    text-decoration: underline;
+}
+
+/* Footer navigation */
+.navfooter {
+    border-top: 1px solid #e1e4e8;
+    padding-top: 20px;
+    margin-top: 60px;
+}
+
+.navfooter table {
+    width: 100%;
+    border: none;
+}
+
+.navfooter a {
+    color: #0066cc;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.navfooter a:hover {
+    text-decoration: underline;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+    color: #1a1a1a;
+    font-weight: 600;
+    margin-top: 24px;
+    margin-bottom: 16px;
+    line-height: 1.25;
+}
+
+.main-content > h1:first-child,
+.main-content > .titlepage h1 {
+    margin-top: 0;
+}
+
+h1 { font-size: 32px; border-bottom: 1px solid #e1e4e8; padding-bottom: 10px; }
+h2 { font-size: 24px; }
+h3 { font-size: 20px; }
+h4 { font-size: 16px; }
+
+.title {
+    color: #1a1a1a;
+}
+
+/* Paragraphs */
+p {
+    margin-bottom: 16px;
+    line-height: 1.6;
+}
+
+/* Lists */
+ul, ol {
+    margin-bottom: 16px;
+    padding-left: 30px;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+.itemizedlist, .orderedlist {
+    margin: 16px 0;
+}
+
+/* Code blocks */
+pre, code {
+    font-family: "SF Mono", Monaco, "Courier New", monospace;
+    font-size: 13px;
+}
+
+pre {
+    background: #f6f8fa;
+    border: 1px solid #e1e4e8;
+    border-radius: 6px;
+    padding: 16px;
+    overflow-x: auto;
+    margin: 16px 0;
+    line-height: 1.45;
+}
+
+code {
+    background: #f6f8fa;
+    padding: 2px 6px;
+    border-radius: 3px;
+    border: 1px solid #e1e4e8;
+}
+
+pre code {
+    background: none;
+    padding: 0;
+    border: none;
+}
+
+.programlisting {
+    background: #f6f8fa;
+    border: 1px solid #e1e4e8;
+    border-radius: 6px;
+    padding: 16px;
+    overflow-x: auto;
+    margin: 16px 0;
+    font-family: "SF Mono", Monaco, "Courier New", monospace;
+    font-size: 13px;
+}
+
+/* Tables */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 20px 0;
+    font-size: 14px;
+}
+
+thead {
+    background: #f6f8fa;
+}
+
+th {
+    border: 1px solid #d0d7de;
+    padding: 12px;
+    text-align: left;
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+td {
+    border: 1px solid #d0d7de;
+    padding: 12px;
+}
+
+tbody tr:nth-child(even) {
+    background: #f6f8fa;
+}
+
+tbody tr:hover {
+    background: #eef2f6;
+}
+
+/* Notes, warnings, tips */
+.note, .warning, .tip, .important, .caution {
+    padding: 16px;
+    margin: 20px 0;
+    border-left: 4px solid;
+    border-radius: 4px;
+    background: #f6f8fa;
+}
+
+.note {
+    border-left-color: #0969da;
+    background: #ddf4ff;
+}
+
+.warning, .caution {
+    border-left-color: #d1242f;
+    background: #ffebe9;
+}
+
+.tip, .important {
+    border-left-color: #1a7f37;
+    background: #dafbe1;
+}
+
+.note h3, .warning h3, .tip h3, .important h3, .caution h3 {
+    margin-top: 0;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* Links */
+a {
+    color: #0969da;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Variablelist (for CLI reference) */
+.variablelist {
+    margin: 20px 0;
+}
+
+.variablelist dt {
+    font-weight: 600;
+    margin-top: 16px;
+    font-family: "SF Mono", Monaco, monospace;
+    font-size: 14px;
+    color: #1a1a1a;
+}
+
+.variablelist dd {
+    margin-left: 20px;
+    margin-bottom: 12px;
+    color: #57606a;
+}
+
+/* Book/Chapter specific */
+.book, .chapter, .section, .preface, .appendix {
+    margin-bottom: 40px;
+}
+
+.titlepage {
+    margin-bottom: 30px;
+}
+
+.abstract {
+    background: #f6f8fa;
+    padding: 20px;
+    border-left: 4px solid #0969da;
+    margin: 20px 0;
+}
+
+/* Copyright and metadata */
+.copyright, .releaseinfo {
+    color: #57606a;
+    font-size: 14px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .sidebar {
+        width: 250px;
+    }
+
+    .main-content {
+        margin-left: 250px;
+        padding: 30px 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+    }
+
+    .main-content {
+        margin-left: 0;
+        padding: 20px;
+    }
+}
+
+/* Scrollbar styling for sidebar */
+.sidebar::-webkit-scrollbar {
+    width: 8px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+    background: #1a252f;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background: #4a5f7f;
+    border-radius: 4px;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+    background: #5a6f8f;
+}

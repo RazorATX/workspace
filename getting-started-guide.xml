@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+"http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd">
+<book id="getting-started-guide">
+  <bookinfo>
+    <title>Getting Started Guide</title>
+    <subtitle>Quick Start for New Users</subtitle>
+    <releaseinfo>Version 1.0</releaseinfo>
+  </bookinfo>
+
+  <preface id="intro">
+    <title>Introduction</title>
+    <para>
+      Welcome! This guide will help you get started with our product in minutes.
+    </para>
+  </preface>
+
+  <chapter id="setup">
+    <title>Initial Setup</title>
+    <para>Let's get your environment set up.</para>
+
+    <section id="prerequisites">
+      <title>Prerequisites</title>
+      <para>Before you begin, ensure you have:</para>
+      <itemizedlist>
+        <listitem><para>macOS 11+ or Linux</para></listitem>
+        <listitem><para>4GB RAM minimum</para></listitem>
+        <listitem><para>Internet connection</para></listitem>
+      </itemizedlist>
+    </section>
+
+    <section id="installation">
+      <title>Installation</title>
+      <para>Install using Homebrew:</para>
+      <programlisting><![CDATA[
+brew install product-name
+product --version
+]]></programlisting>
+    </section>
+  </chapter>
+
+  <chapter id="first-project">
+    <title>Your First Project</title>
+    <para>Create your first project in 5 minutes.</para>
+
+    <section id="create">
+      <title>Create a Project</title>
+      <orderedlist>
+        <listitem><para>Run: <command>product create my-first-project</command></para></listitem>
+        <listitem><para>Navigate: <command>cd my-first-project</command></para></listitem>
+        <listitem><para>Start: <command>product start</command></para></listitem>
+      </orderedlist>
+    </section>
+
+    <section id="next-steps">
+      <title>Next Steps</title>
+      <para>Now that you're up and running:</para>
+      <itemizedlist>
+        <listitem><para>Read the User Guide for detailed features</para></listitem>
+        <listitem><para>Check the API Reference for development</para></listitem>
+        <listitem><para>Join our community forum</para></listitem>
+      </itemizedlist>
+    </section>
+  </chapter>
+</book>

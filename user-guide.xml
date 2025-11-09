@@ -1,0 +1,439 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+"http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd">
+<book id="user-guide">
+  <bookinfo>
+    <title>Product User Guide</title>
+    <subtitle>Complete Documentation for Your Product</subtitle>
+    <author>
+      <firstname>Your</firstname>
+      <surname>Company</surname>
+    </author>
+    <copyright>
+      <year>2025</year>
+      <holder>Your Company</holder>
+    </copyright>
+    <releaseinfo>Version 1.0</releaseinfo>
+  </bookinfo>
+
+  <!-- Preface -->
+  <preface id="preface">
+    <title>About This Guide</title>
+    <para>
+      This user guide provides comprehensive documentation for understanding and using
+      our product. It includes getting started guides, detailed feature documentation,
+      and best practices.
+    </para>
+  </preface>
+
+  <!-- Chapter 1: Getting Started -->
+  <chapter id="getting-started">
+    <title>Getting Started</title>
+    <para>
+      This chapter will help you get up and running quickly with our product.
+    </para>
+
+    <section id="what-is-product">
+      <title>What is This Product?</title>
+      <para>
+        Our product is a powerful solution designed to help you accomplish your goals
+        efficiently and effectively. It provides the following key benefits:
+      </para>
+      <itemizedlist>
+        <listitem>
+          <para>Easy to use interface</para>
+        </listitem>
+        <listitem>
+          <para>Powerful automation capabilities</para>
+        </listitem>
+        <listitem>
+          <para>Scalable architecture</para>
+        </listitem>
+        <listitem>
+          <para>Enterprise-grade security</para>
+        </listitem>
+      </itemizedlist>
+    </section>
+
+    <section id="installation">
+      <title>Installation and Setup</title>
+      <para>
+        Follow these steps to install and configure the product.
+      </para>
+
+      <section id="system-requirements">
+        <title>System Requirements</title>
+        <para>Before installing, ensure your system meets these requirements:</para>
+        <itemizedlist>
+          <listitem>
+            <para>Operating System: macOS 11+ or Linux</para>
+          </listitem>
+          <listitem>
+            <para>Memory: 4GB RAM minimum, 8GB recommended</para>
+          </listitem>
+          <listitem>
+            <para>Disk Space: 500MB available</para>
+          </listitem>
+        </itemizedlist>
+      </section>
+
+      <section id="install-steps">
+        <title>Installation Steps</title>
+        <orderedlist>
+          <listitem>
+            <para>Download the installation package from our website</para>
+          </listitem>
+          <listitem>
+            <para>Run the installer with administrator privileges</para>
+          </listitem>
+          <listitem>
+            <para>Follow the on-screen installation wizard</para>
+          </listitem>
+          <listitem>
+            <para>Restart your system when prompted</para>
+          </listitem>
+        </orderedlist>
+      </section>
+
+      <section id="initial-configuration">
+        <title>Initial Configuration</title>
+        <para>After installation, configure your environment:</para>
+        <programlisting><![CDATA[
+# Set your API key
+export API_KEY="your-api-key-here"
+
+# Initialize the configuration
+product init --config=production
+
+# Verify installation
+product --version
+]]></programlisting>
+      </section>
+    </section>
+
+    <section id="quickstart">
+      <title>Quick Start Tutorial</title>
+      <para>
+        This 5-minute tutorial will walk you through creating your first project.
+      </para>
+      <orderedlist>
+        <listitem>
+          <para>Create a new project: <command>product create my-project</command></para>
+        </listitem>
+        <listitem>
+          <para>Navigate to the project directory: <command>cd my-project</command></para>
+        </listitem>
+        <listitem>
+          <para>Run the development server: <command>product dev</command></para>
+        </listitem>
+        <listitem>
+          <para>Open your browser to <literal>http://localhost:3000</literal></para>
+        </listitem>
+      </orderedlist>
+    </section>
+  </chapter>
+
+  <!-- Chapter 2: Core Concepts -->
+  <chapter id="core-concepts">
+    <title>Core Concepts</title>
+    <para>
+      Understanding these core concepts will help you use the product more effectively.
+    </para>
+
+    <section id="architecture">
+      <title>Architecture Overview</title>
+      <para>
+        The product uses a modular architecture with three main components:
+      </para>
+      <itemizedlist>
+        <listitem>
+          <para><emphasis role="bold">Frontend Layer</emphasis> - User interface and presentation</para>
+        </listitem>
+        <listitem>
+          <para><emphasis role="bold">Business Logic Layer</emphasis> - Core processing and workflows</para>
+        </listitem>
+        <listitem>
+          <para><emphasis role="bold">Data Layer</emphasis> - Storage and persistence</para>
+        </listitem>
+      </itemizedlist>
+    </section>
+
+    <section id="data-model">
+      <title>Data Model</title>
+      <para>
+        The product organizes information using a hierarchical data model.
+      </para>
+
+      <section id="projects">
+        <title>Projects</title>
+        <para>
+          A project is the top-level container for your work. Each project can contain
+          multiple workspaces and resources.
+        </para>
+      </section>
+
+      <section id="workspaces">
+        <title>Workspaces</title>
+        <para>
+          Workspaces allow you to organize related resources and collaborate with team members.
+        </para>
+      </section>
+
+      <section id="resources">
+        <title>Resources</title>
+        <para>
+          Resources are the individual items you create and manage within workspaces.
+        </para>
+      </section>
+    </section>
+
+    <section id="security-model">
+      <title>Security and Permissions</title>
+      <para>
+        The product implements role-based access control (RBAC) to secure your data.
+      </para>
+
+      <table>
+        <title>User Roles and Permissions</title>
+        <tgroup cols="3">
+          <thead>
+            <row>
+              <entry>Role</entry>
+              <entry>Permissions</entry>
+              <entry>Use Case</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>Admin</entry>
+              <entry>Full access to all features</entry>
+              <entry>System administrators</entry>
+            </row>
+            <row>
+              <entry>Editor</entry>
+              <entry>Create, read, update resources</entry>
+              <entry>Content creators</entry>
+            </row>
+            <row>
+              <entry>Viewer</entry>
+              <entry>Read-only access</entry>
+              <entry>Stakeholders, auditors</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </section>
+  </chapter>
+
+  <!-- Chapter 3: Features -->
+  <chapter id="features">
+    <title>Features and Capabilities</title>
+    <para>
+      Explore the powerful features available in the product.
+    </para>
+
+    <section id="automation">
+      <title>Automation</title>
+      <para>
+        Automate repetitive tasks using our built-in automation engine.
+      </para>
+
+      <section id="workflows">
+        <title>Workflows</title>
+        <para>Create custom workflows to automate your processes.</para>
+        <programlisting><![CDATA[
+workflow:
+  name: "Deploy to Production"
+  triggers:
+    - on: push
+      branches: [main]
+  steps:
+    - name: Build
+      run: make build
+    - name: Test
+      run: make test
+    - name: Deploy
+      run: make deploy
+]]></programlisting>
+      </section>
+
+      <section id="scheduled-tasks">
+        <title>Scheduled Tasks</title>
+        <para>Run tasks on a recurring schedule using cron expressions.</para>
+      </section>
+    </section>
+
+    <section id="integrations">
+      <title>Integrations</title>
+      <para>
+        Connect with popular third-party services and tools.
+      </para>
+
+      <section id="api-integration">
+        <title>REST API</title>
+        <para>Use our REST API to integrate with external systems.</para>
+      </section>
+
+      <section id="webhooks">
+        <title>Webhooks</title>
+        <para>Receive real-time notifications for events.</para>
+      </section>
+    </section>
+
+    <section id="collaboration">
+      <title>Collaboration Tools</title>
+      <para>
+        Work together with your team using built-in collaboration features.
+      </para>
+      <itemizedlist>
+        <listitem>
+          <para>Real-time comments and annotations</para>
+        </listitem>
+        <listitem>
+          <para>Version control and change tracking</para>
+        </listitem>
+        <listitem>
+          <para>Team workspaces</para>
+        </listitem>
+        <listitem>
+          <para>Activity feeds and notifications</para>
+        </listitem>
+      </itemizedlist>
+    </section>
+  </chapter>
+
+  <!-- Chapter 4: Best Practices -->
+  <chapter id="best-practices">
+    <title>Best Practices</title>
+    <para>
+      Follow these best practices to get the most out of the product.
+    </para>
+
+    <section id="organization">
+      <title>Organizing Your Work</title>
+      <para>Keep your projects organized with these tips:</para>
+      <itemizedlist>
+        <listitem>
+          <para>Use clear, descriptive names for projects and resources</para>
+        </listitem>
+        <listitem>
+          <para>Create separate workspaces for different teams or departments</para>
+        </listitem>
+        <listitem>
+          <para>Implement a consistent naming convention</para>
+        </listitem>
+        <listitem>
+          <para>Archive completed projects to reduce clutter</para>
+        </listitem>
+      </itemizedlist>
+    </section>
+
+    <section id="performance">
+      <title>Performance Optimization</title>
+      <para>Optimize performance with these recommendations:</para>
+
+      <tip>
+        <para>
+          Enable caching for frequently accessed resources to improve response times.
+        </para>
+      </tip>
+
+      <warning>
+        <para>
+          Avoid creating circular dependencies between resources as this can cause
+          performance degradation.
+        </para>
+      </warning>
+    </section>
+
+    <section id="security-best-practices">
+      <title>Security Best Practices</title>
+      <para>Keep your data secure:</para>
+      <itemizedlist>
+        <listitem>
+          <para>Enable two-factor authentication for all users</para>
+        </listitem>
+        <listitem>
+          <para>Regularly rotate API keys and access tokens</para>
+        </listitem>
+        <listitem>
+          <para>Follow the principle of least privilege when assigning roles</para>
+        </listitem>
+        <listitem>
+          <para>Enable audit logging for compliance requirements</para>
+        </listitem>
+      </itemizedlist>
+    </section>
+  </chapter>
+
+  <!-- Chapter 5: Troubleshooting -->
+  <chapter id="troubleshooting">
+    <title>Troubleshooting</title>
+    <para>
+      Common issues and their solutions.
+    </para>
+
+    <section id="common-errors">
+      <title>Common Error Messages</title>
+
+      <section id="error-connection">
+        <title>Connection Failed</title>
+        <para><emphasis>Error:</emphasis> "Unable to connect to server"</para>
+        <para><emphasis>Solution:</emphasis> Check your network connection and firewall settings.</para>
+      </section>
+
+      <section id="error-auth">
+        <title>Authentication Failed</title>
+        <para><emphasis>Error:</emphasis> "Invalid credentials"</para>
+        <para><emphasis>Solution:</emphasis> Verify your API key is correct and not expired.</para>
+      </section>
+    </section>
+
+    <section id="getting-help">
+      <title>Getting Help</title>
+      <para>If you need additional assistance:</para>
+      <itemizedlist>
+        <listitem>
+          <para>Check our online knowledge base at <ulink url="https://help.example.com">help.example.com</ulink></para>
+        </listitem>
+        <listitem>
+          <para>Contact support at support@example.com</para>
+        </listitem>
+        <listitem>
+          <para>Join our community forum for peer support</para>
+        </listitem>
+      </itemizedlist>
+    </section>
+  </chapter>
+
+  <!-- Appendix -->
+  <appendix id="cli-reference">
+    <title>CLI Command Reference</title>
+    <para>Complete reference for all command-line interface commands.</para>
+
+    <variablelist>
+      <varlistentry>
+        <term><command>product init</command></term>
+        <listitem>
+          <para>Initialize a new project configuration</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><command>product create</command></term>
+        <listitem>
+          <para>Create a new project or resource</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><command>product deploy</command></term>
+        <listitem>
+          <para>Deploy your project to production</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </appendix>
+
+  <index id="doc-index">
+    <title>Index</title>
+  </index>
+</book>

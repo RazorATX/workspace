@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+"http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd">
+<book id="api-reference">
+  <bookinfo>
+    <title>API Reference</title>
+    <subtitle>Complete REST API Documentation</subtitle>
+    <releaseinfo>Version 2.0</releaseinfo>
+  </bookinfo>
+
+  <preface id="api-intro">
+    <title>About the API</title>
+    <para>
+      This reference provides complete documentation for our REST API.
+      All endpoints require authentication via API key.
+    </para>
+  </preface>
+
+  <chapter id="authentication">
+    <title>Authentication</title>
+    <para>Authenticate using your API key in the header.</para>
+
+    <section id="api-keys">
+      <title>API Keys</title>
+      <para>Generate an API key from your dashboard:</para>
+      <programlisting><![CDATA[
+curl -H "Authorization: Bearer YOUR_API_KEY" \
+  https://api.example.com/v2/endpoint
+]]></programlisting>
+    </section>
+
+    <section id="rate-limits">
+      <title>Rate Limits</title>
+      <para>Rate limits apply to all endpoints:</para>
+      <itemizedlist>
+        <listitem><para>Free tier: 100 requests/hour</para></listitem>
+        <listitem><para>Pro tier: 1000 requests/hour</para></listitem>
+        <listitem><para>Enterprise: Unlimited</para></listitem>
+      </itemizedlist>
+    </section>
+  </chapter>
+
+  <chapter id="endpoints">
+    <title>API Endpoints</title>
+
+    <section id="projects-api">
+      <title>Projects API</title>
+
+      <section id="list-projects">
+        <title>List Projects</title>
+        <para><command>GET /v2/projects</command></para>
+        <para>Returns a list of all projects.</para>
+        <programlisting><![CDATA[
+{
+  "projects": [
+    {
+      "id": "proj_123",
+      "name": "My Project",
+      "created_at": "2025-01-01T00:00:00Z"
+    }
+  ]
+}
+]]></programlisting>
+      </section>
+
+      <section id="create-project">
+        <title>Create Project</title>
+        <para><command>POST /v2/projects</command></para>
+        <para>Creates a new project.</para>
+        <programlisting><![CDATA[
+{
+  "name": "New Project",
+  "description": "My new project"
+}
+]]></programlisting>
+      </section>
+    </section>
+
+    <section id="resources-api">
+      <title>Resources API</title>
+      <para>Manage resources within projects.</para>
+
+      <section id="list-resources">
+        <title>List Resources</title>
+        <para><command>GET /v2/projects/:id/resources</command></para>
+      </section>
+
+      <section id="update-resource">
+        <title>Update Resource</title>
+        <para><command>PUT /v2/resources/:id</command></para>
+      </section>
+    </section>
+  </chapter>
+
+  <chapter id="webhooks-api">
+    <title>Webhooks</title>
+    <para>Configure webhooks to receive real-time notifications.</para>
+
+    <section id="webhook-setup">
+      <title>Setting Up Webhooks</title>
+      <para>Register a webhook endpoint:</para>
+      <programlisting><![CDATA[
+POST /v2/webhooks
+{
+  "url": "https://your-app.com/webhook",
+  "events": ["project.created", "resource.updated"]
+}
+]]></programlisting>
+    </section>
+  </chapter>
+</book>

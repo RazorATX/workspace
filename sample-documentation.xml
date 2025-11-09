@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+"http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd">
+<article>
+  <articleinfo>
+    <title>Sample Documentation</title>
+    <author>
+      <firstname>Your</firstname>
+      <surname>Name</surname>
+    </author>
+    <date>2025-11-08</date>
+    <abstract>
+      <para>This is a sample XML documentation file demonstrating various DocBook elements.</para>
+    </abstract>
+  </articleinfo>
+
+  <section id="introduction">
+    <title>Introduction</title>
+    <para>
+      This document demonstrates various XML elements that can be used in DocBook documentation.
+      It includes sections, lists, tables, code examples, and more.
+    </para>
+    <para>
+      DocBook is a semantic markup language for technical documentation. It allows you to create
+      content that can be published in various formats including HTML, PDF, and EPUB.
+    </para>
+  </section>
+
+  <section id="features">
+    <title>Key Features</title>
+    <para>Here are some important features of this documentation system:</para>
+
+    <itemizedlist>
+      <listitem>
+        <para>Automatic HTML generation from XML source</para>
+      </listitem>
+      <listitem>
+        <para>Support for various documentation elements</para>
+      </listitem>
+      <listitem>
+        <para>Cross-platform build system</para>
+      </listitem>
+      <listitem>
+        <para>Integration with VS Code tasks</para>
+      </listitem>
+    </itemizedlist>
+
+    <section id="subsection-example">
+      <title>Subsection Example</title>
+      <para>You can nest sections to create hierarchical documentation structure.</para>
+
+      <orderedlist>
+        <listitem>
+          <para>First step in the process</para>
+        </listitem>
+        <listitem>
+          <para>Second step in the process</para>
+        </listitem>
+        <listitem>
+          <para>Third step in the process</para>
+        </listitem>
+      </orderedlist>
+    </section>
+  </section>
+
+  <section id="code-examples">
+    <title>Code Examples</title>
+    <para>You can include code examples using the programlisting element:</para>
+
+    <programlisting><![CDATA[
+function buildDocumentation() {
+  console.log("Building documentation...");
+
+  const xmlFiles = findXMLFiles();
+  xmlFiles.forEach(file => {
+    convertToHTML(file);
+  });
+
+  console.log("Build complete!");
+}
+]]></programlisting>
+
+    <para>Inline code can be marked up with <code>code</code> tags.</para>
+  </section>
+
+  <section id="tables">
+    <title>Tables</title>
+    <para>DocBook supports tables for organizing information:</para>
+
+    <table>
+      <title>Build Commands</title>
+      <tgroup cols="2">
+        <thead>
+          <row>
+            <entry>Command</entry>
+            <entry>Description</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry>make build</entry>
+            <entry>Build XML documentation to HTML</entry>
+          </row>
+          <row>
+            <entry>make clean</entry>
+            <entry>Remove build directory</entry>
+          </row>
+          <row>
+            <entry>make rebuild</entry>
+            <entry>Clean and build in one step</entry>
+          </row>
+          <row>
+            <entry>make install</entry>
+            <entry>Install required tools</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+  </section>
+
+  <section id="notes-and-warnings">
+    <title>Notes and Warnings</title>
+    <para>You can add special callout elements:</para>
+
+    <note>
+      <para>This is a note. Use notes to provide additional information that might be helpful.</para>
+    </note>
+
+    <warning>
+      <para>This is a warning. Use warnings to alert readers about potential issues or important considerations.</para>
+    </warning>
+
+    <tip>
+      <para>This is a tip. Use tips to share best practices or helpful suggestions.</para>
+    </tip>
+  </section>
+
+  <section id="links">
+    <title>Links and References</title>
+    <para>
+      You can create external links using the <code>ulink</code> element:
+      <ulink url="https://docbook.org/">DocBook Official Website</ulink>
+    </para>
+
+    <para>
+      Internal cross-references can link to other sections, like this reference to
+      <xref linkend="introduction"/>.
+    </para>
+  </section>
+
+  <section id="conclusion">
+    <title>Conclusion</title>
+    <para>
+      This sample document demonstrates the various elements available in DocBook XML.
+      You can now build this file using the make commands or VS Code tasks to generate HTML output.
+    </para>
+    <para>
+      To build this documentation, run <command>make build</command> or use VS Code's
+      "Build XML Documentation" task.
+    </para>
+  </section>
+</article>

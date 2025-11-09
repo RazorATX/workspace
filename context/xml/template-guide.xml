@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+"http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd">
+<book id="template-guide">
+  <bookinfo>
+    <title>Your Guide Title</title>
+    <subtitle>Your Guide Subtitle</subtitle>
+    <author>
+      <firstname>Your</firstname>
+      <surname>Name</surname>
+    </author>
+    <copyright>
+      <year>2025</year>
+      <holder>Your Company</holder>
+    </copyright>
+    <releaseinfo>Version 1.0</releaseinfo>
+  </bookinfo>
+
+  <!-- Preface (optional - introductory content) -->
+  <preface id="preface">
+    <title>About This Guide</title>
+    <para>
+      This is the introduction to your guide. Explain what the reader will learn
+      and why this guide is useful.
+    </para>
+  </preface>
+
+  <!-- Chapter 1 - Your First Chapter -->
+  <chapter id="chapter-one">
+    <title>Chapter One Title</title>
+    <para>
+      Introduction paragraph for this chapter.
+    </para>
+
+    <!-- Section within the chapter -->
+    <section id="first-section">
+      <title>First Section</title>
+      <para>
+        Content for your first section. You can include various elements:
+      </para>
+
+      <!-- Bullet list -->
+      <itemizedlist>
+        <listitem>
+          <para>First bullet point</para>
+        </listitem>
+        <listitem>
+          <para>Second bullet point</para>
+        </listitem>
+        <listitem>
+          <para>Third bullet point</para>
+        </listitem>
+      </itemizedlist>
+
+      <!-- Subsection (will appear nested in sidebar) -->
+      <section id="subsection-example">
+        <title>Subsection Example</title>
+        <para>This is a subsection that will be nested under the main section.</para>
+
+        <!-- Numbered list -->
+        <orderedlist>
+          <listitem>
+            <para>Step one</para>
+          </listitem>
+          <listitem>
+            <para>Step two</para>
+          </listitem>
+          <listitem>
+            <para>Step three</para>
+          </listitem>
+        </orderedlist>
+      </section>
+    </section>
+
+    <!-- Code Examples Section -->
+    <section id="code-examples">
+      <title>Code Examples</title>
+      <para>Show code snippets using the programlisting element:</para>
+
+      <programlisting><![CDATA[
+# Example code block
+function example() {
+  console.log("Hello World");
+  return true;
+}
+
+# Run the function
+example();
+]]></programlisting>
+
+      <para>Inline code uses the <code>code</code> element.</para>
+      <para>Commands use the <command>command</command> element.</para>
+    </section>
+
+    <!-- Tables Section -->
+    <section id="tables">
+      <title>Tables</title>
+      <para>Create tables for structured information:</para>
+
+      <table>
+        <title>Example Table</title>
+        <tgroup cols="3">
+          <thead>
+            <row>
+              <entry>Column 1</entry>
+              <entry>Column 2</entry>
+              <entry>Column 3</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>Data 1</entry>
+              <entry>Data 2</entry>
+              <entry>Data 3</entry>
+            </row>
+            <row>
+              <entry>Data 4</entry>
+              <entry>Data 5</entry>
+              <entry>Data 6</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </section>
+  </chapter>
+
+  <!-- Chapter 2 - Another Chapter -->
+  <chapter id="chapter-two">
+    <title>Chapter Two Title</title>
+    <para>
+      Each chapter appears as a top-level item in the sidebar navigation.
+    </para>
+
+    <section id="callouts">
+      <title>Notes, Warnings, and Tips</title>
+      <para>Use callout elements for special information:</para>
+
+      <note>
+        <para>
+          This is a note. Use notes to provide additional helpful information.
+        </para>
+      </note>
+
+      <warning>
+        <para>
+          This is a warning. Use warnings to alert readers about important issues
+          or potential problems.
+        </para>
+      </warning>
+
+      <tip>
+        <para>
+          This is a tip. Use tips to share best practices or helpful suggestions.
+        </para>
+      </tip>
+
+      <important>
+        <para>
+          This is marked as important. Use for critical information.
+        </para>
+      </important>
+    </section>
+
+    <section id="links">
+      <title>Links and References</title>
+      <para>
+        Create external links using <code>ulink</code>:
+        <ulink url="https://example.com">Link Text</ulink>
+      </para>
+
+      <para>
+        Create internal cross-references to other sections:
+        See <xref linkend="first-section"/> for more details.
+      </para>
+    </section>
+
+    <section id="text-formatting">
+      <title>Text Formatting</title>
+      <para>
+        Use <emphasis role="bold">bold text</emphasis> or
+        <emphasis>italic text</emphasis> to emphasize content.
+      </para>
+
+      <para>
+        Use <literal>literal</literal> for exact text that should not be interpreted.
+      </para>
+    </section>
+  </chapter>
+
+  <!-- Chapter 3 - Advanced Examples -->
+  <chapter id="advanced">
+    <title>Advanced Examples</title>
+
+    <section id="variable-lists">
+      <title>Variable Lists (Definition Lists)</title>
+      <para>Great for glossaries or term definitions:</para>
+
+      <variablelist>
+        <varlistentry>
+          <term>Term One</term>
+          <listitem>
+            <para>Definition of term one goes here.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Term Two</term>
+          <listitem>
+            <para>Definition of term two goes here.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Term Three</term>
+          <listitem>
+            <para>Definition of term three goes here.</para>
+          </listitem>
+        </varlistentry>
+      </variablelist>
+    </section>
+
+    <section id="procedures">
+      <title>Step-by-Step Procedures</title>
+      <para>For detailed procedures with multiple steps:</para>
+
+      <procedure>
+        <step>
+          <para>First, do this task.</para>
+        </step>
+        <step>
+          <para>Then, complete this second task.</para>
+        </step>
+        <step>
+          <para>Finally, verify the result.</para>
+        </step>
+      </procedure>
+    </section>
+  </chapter>
+
+  <!-- Appendix (optional - reference material) -->
+  <appendix id="reference">
+    <title>Reference Material</title>
+    <para>
+      Appendices appear after the main chapters in the sidebar and are useful
+      for reference material, glossaries, or additional resources.
+    </para>
+
+    <section id="resources">
+      <title>Additional Resources</title>
+      <itemizedlist>
+        <listitem><para>Resource one</para></listitem>
+        <listitem><para>Resource two</para></listitem>
+        <listitem><para>Resource three</para></listitem>
+      </itemizedlist>
+    </section>
+  </appendix>
+
+  <!-- Index (optional - will be auto-generated) -->
+  <index id="doc-index">
+    <title>Index</title>
+  </index>
+</book>
