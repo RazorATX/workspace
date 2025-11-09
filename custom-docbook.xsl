@@ -85,8 +85,56 @@
   <!-- Close the main-content div at the end -->
   <xsl:template name="user.footer.content">
     <xsl:text disable-output-escaping="yes"><![CDATA[
-    </div> <!-- Close main-content -->]]></xsl:text>
+    </div> <!-- Close main-content -->
+
+    <!-- Help Panel Container -->
+    <div class="help-overlay" id="helpOverlay" onclick="closeHelpPanel()"></div>
+    <div class="help-panel" id="helpPanel">
+      <div class="help-panel-header">
+        <h3 id="helpPanelTitle">Help</h3>
+        <button class="help-panel-close" onclick="closeHelpPanel()" aria-label="Close help panel">&times;</button>
+      </div>
+      <div class="help-panel-content" id="helpPanelContent">
+        <!-- Help content will be dynamically inserted here -->
+      </div>
+    </div>
+
+    <!-- Help Panel JavaScript -->
+    <script>
+    function openHelpPanel(title, content) {
+      const panel = document.getElementById('helpPanel');
+      const overlay = document.getElementById('helpOverlay');
+      const titleEl = document.getElementById('helpPanelTitle');
+      const contentEl = document.getElementById('helpPanelContent');
+
+      titleEl.textContent = title;
+      contentEl.innerHTML = content;
+
+      panel.classList.add('open');
+      overlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeHelpPanel() {
+      const panel = document.getElementById('helpPanel');
+      const overlay = document.getElementById('helpOverlay');
+
+      panel.classList.remove('open');
+      overlay.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    // Close on Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closeHelpPanel();
+      }
+    });
+    </script>]]></xsl:text>
   </xsl:template>
+
+  <!-- Customize navigation text to show page titles instead of "Prev/Next" -->
+  <xsl:param name="navig.showtitles">1</xsl:param>
 
 
 </xsl:stylesheet>
